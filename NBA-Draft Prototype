@@ -1,0 +1,108 @@
+import java.awt.*;
+import java.awt.event.*;
+public class nbaDraft extends java.applet.Applet implements ActionListener {
+ //Initializes variables
+ Graphics screen;
+ TextField pick1,pick2,pick3,pick4,pick5,pick6,pick7,pick8,pick9,pick10,pick11,pick12,pick13,team;
+ TextArea output;
+ Button submit;
+ Label draftLabel;
+ String pick1w,pick2w,pick3w,pick4w,pick5w,pick6w,pick7w,pick8w,pick9w,pick10w,pick11w,pick12w,pick13w,teamw; 
+ public void init() {
+ setLayout(null);
+ //Adds in the variables
+ pick1=new TextField(7);
+ pick2=new TextField(7);
+ pick3=new TextField(7);
+ pick4=new TextField(7);
+ pick5=new TextField(7);
+ pick6=new TextField(7);
+ pick7=new TextField(7);
+ pick8=new TextField(7);
+ pick9=new TextField(7);
+ pick10=new TextField(7);
+ pick11=new TextField(7);
+ pick12=new TextField(7);
+ pick13=new TextField(7);
+ team=new TextField(7);
+ submit=new Button("Submit");
+ draftLabel=new Label("NBA - Draft");
+ output=new TextArea(7,10);
+ //Sets the boundaries
+ pick1.setBounds(10,40,100,30);
+ pick2.setBounds(10,85,100,30);
+ pick3.setBounds(10,125,100,30);
+ pick4.setBounds(120,40,100,30);
+ pick5.setBounds(120,85,100,30);
+ pick6.setBounds(120,125,100,30);
+ pick7.setBounds(230,40,100,30);
+ pick8.setBounds(230,85,100,30);
+ pick9.setBounds(230,125,100,30);
+ pick10.setBounds(340,40,100,30);
+ pick11.setBounds(340,85,100,30);
+ pick12.setBounds(340,125,100,30);
+ pick13.setBounds(175,165,100,30);
+ team.setBounds(150,10,150,25);
+ submit.setBounds(150,200,150,30);
+ output.setBounds(10,250,425,300);
+ draftLabel.setBounds(10,5,75,30);
+ submit.addActionListener(this);
+ //Adds in the variables
+ add(pick1);
+ add(pick2);
+ add(pick3);
+ add(pick4);
+ add(pick5);
+ add(pick6);
+ add(pick7);
+ add(pick8);
+ add(pick9);
+ add(pick10);
+ add(pick11);
+ add(pick12);
+ add(pick13);
+ add(output);
+ add(draftLabel);
+ add(team);
+ add(submit);
+ }
+ public void actionPerformed(ActionEvent event) {
+ //Gets and sets the text
+ pick1w=pick1.getText();
+ pick2w=pick2.getText();
+ pick3w=pick3.getText();
+ pick4w=pick4.getText();
+ pick5w=pick5.getText();
+ pick6w=pick6.getText();
+ pick7w=pick7.getText();
+ pick8w=pick8.getText();
+ pick9w=pick9.getText();
+ pick10w=pick10.getText();
+ pick11w=pick11.getText();
+ pick12w=pick12.getText();
+ pick13w=pick13.getText();
+ teamw=team.getText();
+ //Creates the output text for the program
+ output.setText("You have chosen the following picks for the team: " +teamw +"\n"+"\n"
+ +"First Pick: " +pick1w +"\n"	
+ +"Second Pick: " +pick2w +"\n"
+ +"Third Pick: " +pick3w +"\n"
+ +"Fourth Pick: " +pick4w +"\n"
+ +"Fifth Pick: " +pick5w +"\n"
+ +"Sixth Pick: " +pick6w +"\n"
+ +"Seventh Pick: " +pick7w +"\n"
+ +"Eight Pick: " +pick8w +"\n"
+ +"Ninth Pick: " +pick9w +"\n"
+ +"Tenth Pick: " +pick10w +"\n"
+ +"Eleventh Pick: " +pick11w +"\n"
+ +"Twelfth Pick: " +pick12w +"\n"
+ +"Head Coach: " +pick13w +"\n"
+		 );
+ //Reloads the screen to show new text
+ repaint();
+ }
+ public void paint(Graphics screen) {
+	 
+ }
+}//ends paint method
+//Ends NBA Draft
